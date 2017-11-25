@@ -48,6 +48,7 @@ public class UpdateActivity extends AppCompatActivity {
         confPassword = (EditText) findViewById(R.id.confPassword);
         phone = (EditText) findViewById(R.id.phone);
         update= (Button) findViewById(R.id.update);
+
         idString=prefs.getString("id","");
         userNameString=prefs.getString("username","");
         emailString=prefs.getString("email","");

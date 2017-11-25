@@ -24,13 +24,21 @@ public class MainActivity extends AppCompatActivity  {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         LinearLayout linearLayout =(LinearLayout)findViewById(R.id.myprofile);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(MainActivity.this,UpdateActivity.class);
+                startActivity(i);
+            }
+        });
+
+        LinearLayout live =(LinearLayout)findViewById(R.id.live);
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(MainActivity.this,MapsActivity.class);
                 startActivity(i);
             }
         });
@@ -52,12 +60,12 @@ public class MainActivity extends AppCompatActivity  {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-       /* if (id == R.id.my_profile) {
-            Intent i=new Intent(MainActivity.this, UpdateActivity.class);
+        if (id == R.id.add) {
+            Intent i=new Intent(MainActivity.this, add.class);
             startActivity(i);
             return true;
         }
-        else*/ if (id == R.id.log_out)
+        else if (id == R.id.log_out)
         {
             final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             builder.setTitle("Logout Confirmation");
